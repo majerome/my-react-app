@@ -1,11 +1,17 @@
-function PokemonCard({pokemon}) {
+interface Pokemon {
+    name: string;
+    imgSrc?: string;
+}
+
+
+function PokemonCard({name, imgSrc}: Pokemon) {
     return <figure>
         {
-        pokemon.imgSrc !== undefined ? 
-        <img src={pokemon.imgSrc} alt={pokemon.name} /> :
+        imgSrc !== undefined ? 
+        <img src={imgSrc} alt={name} /> :
         <p>???</p>
         }
-    <figcaption>{pokemon.name}</figcaption>
+    <figcaption>{name}</figcaption>
     </figure>;
 }
 
